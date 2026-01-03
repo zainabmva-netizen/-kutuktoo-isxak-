@@ -1,0 +1,229 @@
+:root {
+  --bg: #064420;
+  --gold: #FFD700;
+  --text: #ffffff;
+  --muted: #c9f3db;
+}
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+
+/* Header */
+.bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 20px;
+  background: #022c1f;
+}
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--gold);
+  font-weight: bold;
+}
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--gold);
+}
+.btn {
+  background: var(--gold);
+  color: #111;
+  padding: 8px 14px;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* Hero */
+.hero {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  padding: 24px;
+}
+h1 {
+  font-size: 2.4rem;
+  animation: glow 2s infinite alternate;
+}
+@keyframes glow {
+  from { text-shadow: 0 0 8px var(--gold); }
+  to   { text-shadow: 0 0 24px var(--gold); }
+}
+.lead {
+  font-size: 1.1rem;
+  color: var(--muted);
+}
+.ribbon {
+  background: rgba(0,0,0,0.2);
+  padding: 14px;
+  border-radius: 12px;
+  margin-top: 16px;
+}
+.ribbon .big {
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: var(--gold);
+}
+.ribbon .small {
+  color: var(--muted);
+  margin-top: 6px;
+}
+
+/* Table */
+.table {
+  position: relative;
+  background: linear-gradient(#0b6536, #094c29);
+  border: 8px solid #5a3719;
+  border-radius: 18px;
+  height: 300px;
+  margin-top: 20px;
+}
+.pocket {
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: #111;
+}
+.pocket.tl { top: 6px; left: 6px; }
+.pocket.tr { top: 6px; right: 6px; }
+.pocket.bl { bottom: 6px; left: 6px; }
+.pocket.br { bottom: 6px; right: 6px; }
+
+.ball {
+  position: absolute;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: #350d0d;
+  display: grid;
+  place-items: center;
+  font-weight: bold;
+  color: #111;
+  animation: roll 8s linear infinite;
+}
+.ball.red { background: #ffffff; }
+.ball.blue { background: #ffffff; }
+.ball.yellow { background: #ffffff; }
+
+@keyframes roll {
+  0%   { transform: translate(10px, 20px); }
+  25%  { transform: translate(200px, 40px); }
+  50%  { transform: translate(400px, 80px); }
+  75%  { transform: translate(600px, 140px); }
+  100% { transform: translate(10px, 20px); }
+}
+
+/* Card */
+.card img {
+  width: 100%;
+  border-radius: 12px;
+}
+.caption {
+  color: var(--muted);
+  margin-top: 10px;
+  text-align: center;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 20px;
+  color: rgba(255,255,255,0.6);
+}
+
+/* Confetti canvas */
+#confettiCanvas {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 20;
+}
+
+
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to bottom right, #f0fff4, #6cc382);
+      color: #333;
+    }
+    header {
+      background: #38a169;
+      color: rgb(23, 76, 14);
+      padding: 20px;
+      text-align: center;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+    h1 {
+      margin: 0;
+      font-size: 2.4rem;
+      animation: fadeIn 1.5s ease-in-out;
+    }
+    .lead {
+      text-align: center;
+      margin: 20px;
+      font-size: 1.1rem;
+      color: #2f855a;
+    }
+    .wishes {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+      padding: 20px;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+    .wish {
+      background: #088942;
+      border-left: 6px solid #38a169;
+      border-radius: 10px;
+      padding: 16px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+      animation: slideUp 1s ease forwards;
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    .wish:nth-child(1) { animation-delay: 0.3s; }
+    .wish:nth-child(2) { animation-delay: 0.6s; }
+    .wish:nth-child(3) { animation-delay: 0.9s; }
+    .emoji {
+      font-size: 1.5rem;
+      margin-right: 8px;
+    }
+    footer {
+      text-align: center;
+      padding: 20px;
+      font-size: 0.9rem;
+      color: #555;
+    }
+    .btn {
+      display: inline-block;
+      background: #38a169;
+      color: white;
+      padding: 10px 16px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      margin: 10px auto;
+      transition:  0.3s ease;
+    }
+    .btn:hover {
+      background: #2f855a;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: scale(0.95); }
+      to { opacity: 1; transform: scale(1); }
+    }
+    @keyframes slideUp {
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    
